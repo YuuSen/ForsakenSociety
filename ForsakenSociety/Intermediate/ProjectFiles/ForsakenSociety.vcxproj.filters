@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ForsakenSociety.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F2316712-3C93-408A-936B-CCD43071FE7A}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ForsakenSociety.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ForsakenSocietyEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{B017CAA1-8C27-487D-9EA1-EF2E140789AB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ForsakenSociety">
+      <UniqueIdentifier>{7B869DDF-EA81-4FEA-AEC7-DEFC1A141EF5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ForsakenSociety\ForsakenSociety.Build.cs">
+      <Filter>Source\ForsakenSociety</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ForsakenSociety\ForsakenSociety.cpp">
+      <Filter>Source\ForsakenSociety</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ForsakenSociety\ForsakenSociety.h">
+      <Filter>Source\ForsakenSociety</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ForsakenSociety\ForsakenSocietyCharacter.cpp">
+      <Filter>Source\ForsakenSociety</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ForsakenSociety\ForsakenSocietyCharacter.h">
+      <Filter>Source\ForsakenSociety</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ForsakenSociety\ForsakenSocietyGameMode.cpp">
+      <Filter>Source\ForsakenSociety</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ForsakenSociety\ForsakenSocietyGameMode.h">
+      <Filter>Source\ForsakenSociety</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-ForsakenSociety.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\ForsakenSocietyEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\ForsakenSociety.cpp.obj"
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\ForsakenSocietyCharacter.cpp.obj"
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\ForsakenSocietyGameMode.cpp.obj"
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\ForsakenSociety.init.gen.cpp.obj"
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\ForsakenSocietyCharacter.gen.cpp.obj"
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\ForsakenSocietyGameMode.gen.cpp.obj"
+"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\Default.rc2.res"
+/OUT:"E:\GAMING CAMPUS\Projet Commun\ForsakenSociety\ForsakenSociety\Intermediate\Build\Win64\UE4Editor\Development\ForsakenSociety\UE4Editor-ForsakenSociety.lib"
