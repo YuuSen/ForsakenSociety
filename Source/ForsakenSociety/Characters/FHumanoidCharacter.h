@@ -3,16 +3,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
+
+#include "ForsakenSociety/DamageableActor.h"
 #include "FHumanoidCharacter.generated.h"
 
 /*
- * TODO Create a parent class that handle Health and common stat with NPC
  * This class is the base class for PlayableHumanoidCharacter
  */
 
 UCLASS()
-class FORSAKENSOCIETY_API AFHumanoidCharacter : public ACharacter
+class FORSAKENSOCIETY_API AFHumanoidCharacter : public ADamageableActor
 {
 	GENERATED_BODY()
 

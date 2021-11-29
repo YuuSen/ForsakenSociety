@@ -5,6 +5,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AFHumanoidCharacter::AFHumanoidCharacter()
@@ -54,7 +55,6 @@ AFHumanoidCharacter::AFHumanoidCharacter()
 void AFHumanoidCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -177,12 +177,14 @@ void AFHumanoidCharacter::SprintKeyUp()
 }
 
 void AFHumanoidCharacter::CrouchKeyDown()
-{
+{	
+	Crouch(true);
 	bCrouchKeyDown = true;
 }
 
 void AFHumanoidCharacter::CrouchKeyUp()
 {
+	UnCrouch(true);
 	bCrouchKeyDown = false;
 }
 
