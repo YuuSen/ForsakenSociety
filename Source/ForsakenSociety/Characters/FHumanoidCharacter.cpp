@@ -43,7 +43,11 @@ AFHumanoidCharacter::AFHumanoidCharacter()
 	fRunningSpeed = 400.0f;
 	fSprintingSpeed = 1000.0f;
 
-	bShiftKeyDown = false;	
+	bSprintKeyDown = false;	
+	
+	fCrouchingSpeed = 300.0f;
+
+	bCrouchKeyDown = false;
 }
 
 // Called when the game starts or when spawned
@@ -58,7 +62,7 @@ void AFHumanoidCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	ManageSprint();
+	ManageCharacterSpeed();
 }
 
 // Called to bind functionality to input
@@ -66,11 +70,14 @@ void AFHumanoidCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFHumanoidCharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released,this, &ACharacter::StopJumping);
 	
-	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &AFHumanoidCharacter::ShiftKeyDown);
-	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &AFHumanoidCharacter::ShiftKeyUp);
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &AFHumanoidCharacter::SprintKeyDown);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &AFHumanoidCharacter::SprintKeyUp);
+
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AFHumanoidCharacter::CrouchKeyDown);
+	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AFHumanoidCharacter::CrouchKeyUp);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AFHumanoidCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AFHumanoidCharacter::MoveRight);
@@ -133,18 +140,49 @@ void AFHumanoidCharacter::ScrollInOut(float fValue)
 	}
 }
 
-void AFHumanoidCharacter::ManageSprint()
+void AFHumanoidCharacter::ManageCharacterSpeed()
 {
-	GetCharacterMovement()->MaxWalkSpeed = bShiftKeyDown ? fSprintingSpeed : fRunningSpeed;
+	float currentSpeed = fRunningSpeed;
+
+	if (bSprintKeyDown)
+	{
+		currentSpeed = fSprintingSpeed;	
+	}
+	else if (bCrouchKeyDown)
+	{
+		currentSpeed = fCrouchingSpeed;
+	}
+	
+	GetCharacterMovement()->MaxWalkSpeed = currentSpeed;
 }
 
-void AFHumanoidCharacter::ShiftKeyDown()
+void AFHumanoidCharacter::Jump()
 {
-	bShiftKeyDown = true;
+	if (bCrouchKeyDown)
+	{
+		return;
+	}
+
+	Super::Jump();
 }
 
-void AFHumanoidCharacter::ShiftKeyUp()
+void AFHumanoidCharacter::SprintKeyDown()
 {
-	bShiftKeyDown = false;
+	bSprintKeyDown = true;
+}
+
+void AFHumanoidCharacter::SprintKeyUp()
+{
+	bSprintKeyDown = false;
+}
+
+void AFHumanoidCharacter::CrouchKeyDown()
+{
+	bCrouchKeyDown = true;
+}
+
+void AFHumanoidCharacter::CrouchKeyUp()
+{
+	bCrouchKeyDown = false;
 }
 

@@ -49,7 +49,13 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Running")
 	float fSprintingSpeed;
 
-	bool bShiftKeyDown;
+	bool bSprintKeyDown;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Crouching")
+	float fCrouchingSpeed;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Crouching")
+	bool bCrouchKeyDown;
 
 public:	
 	// Called every frame
@@ -77,11 +83,17 @@ protected:
 
 	void ScrollInOut(float fValue);
 	
-	void ManageSprint();
+	void ManageCharacterSpeed();
+
+	virtual void Jump() override;
 	
 	/** Pressed down to enable sprinting */
-	void ShiftKeyDown();
+	void SprintKeyDown();
 
 	/** Released to stop sprinting*/
-	void ShiftKeyUp();
+	void SprintKeyUp();
+
+	void CrouchKeyDown();
+
+	void CrouchKeyUp();
 };
